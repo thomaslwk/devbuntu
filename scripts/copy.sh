@@ -8,5 +8,5 @@
 cd ..
 
 ## Link dotfiles from repo to home 
-ln -s .bashrc ${HOME}
-ln -s .vimrc ${HOME}
+cp -r .bashrc ${HOME}
+cp -r .vimrc ${HOME}
