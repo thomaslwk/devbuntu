@@ -35,8 +35,8 @@ export EDITOR=/usr/bin/vim
 ###################
 export TERM=xterm-color
 
-### Add git branch to terminal 
+### add git branch to terminal 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-export PS1="\[\e[38;5;39m\]\u\[\e[38;5;81m\]@\[\e[38;5;77m\]\h \[\e[38;5;226m\]\w\[\033[0m\]\$(parse_git_branch)\[\033[00m\]$ "
+export PS1="\[\e[38;5;39m\]\u\[\e[38;5;81m\]@\[\e[38;5;77m\]\h \[\e[38;5;226m\]\w \[\033[0m\] [$ "
