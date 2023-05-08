@@ -36,7 +36,7 @@ install vim
 install wget
 ## snap packages
 snap install slack 
-snap install telegram 
+snap install telegram-desktop
 snap install vlc 
 snap install spotify 
 
