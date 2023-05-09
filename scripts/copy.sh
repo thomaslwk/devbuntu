@@ -10,3 +10,5 @@ cd ..
 ## Link dotfiles from repo to home 
 cp -r .bashrc ${HOME}
 cp -r .vimrc ${HOME}
+cp -r .tmux.conf ${HOME}
+
