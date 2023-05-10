@@ -34,6 +34,7 @@ install jq
 install tree
 install vim
 install wget
+install terminator
 ## snap packages
 snap install slack 
 snap install telegram-desktop
