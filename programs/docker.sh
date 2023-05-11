@@ -1,5 +1,8 @@
 #!/bin/bash 
 
+############
+## DOCKER ##
+############
 echo "🐋 Installing Docker"
 sudo apt update 
 sudo apt-get install -y \
