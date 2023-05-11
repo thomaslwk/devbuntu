@@ -36,10 +36,7 @@ install vim
 install wget
 install terminator
 ## snap packages
-snap install slack 
-snap install telegram-desktop
-snap install vlc 
-snap install spotify 
+snap install slack telegram-desktop vlc spotify  
 
 #################################
 ## Run all scripts in programs ##
