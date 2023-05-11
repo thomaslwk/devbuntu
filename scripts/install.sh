@@ -48,3 +48,9 @@ for f in programs/*.sh; do bash "$f" -H; done
 ######################
 sudo apt upgrade -y
 sudo apt autoremove -y
+
+#####################
+## Create bins dir ##
+#####################
+cd ..
+mkdir bins 
