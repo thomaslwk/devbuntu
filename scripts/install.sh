@@ -34,9 +34,9 @@ install jq
 install tree
 install vim
 install wget
-install terminator
+#install terminator
 ## snap packages
-snap install slack telegram-desktop vlc spotify  
+#snap install slack telegram-desktop vlc spotify  
 
 #################################
 ## Run all scripts in programs ##
