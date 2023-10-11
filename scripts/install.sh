@@ -41,6 +41,11 @@ install wget
 for f in programs/*.sh; do bash "$f" -H; done
 
 ######################
+## Setup Git Prompt ## 
+######################
+curl -o ~/.config/.git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+
+######################
 ## Get all upgrades ##
 ######################
 sudo apt upgrade -y
