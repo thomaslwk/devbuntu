@@ -2,53 +2,58 @@
 ## devbuntu - Config ## 
 ########################
 
-#################
-## ZSH Configs ##
-#################
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="agnoster"
+################
+# ## SET UP ## # 
+################
+export LANG=en_US.UTF-8
 
-## Plugins 
-plugins=(git)
+###### ZSH HISTORY ######  
+# Export history config 
+export HISTFILE=$ZSH/.zsh_history 
+# Load num of commands zsh will load in mem 
+export HISTSIZE=10000
+# Number of commands to save on file 
+export SAVEHIST=10000
+# Remove duplicates 
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
 
-
-############
-## EDITOR ## 
-############
+################
+# ## EDITOR ## #
+################
 export EDITOR=/usr/bin/vim
- 
-###########
-## ALIAS ## 
-###########
-alias cp='cp -Rv'
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
-alias la='ls --color=auto -al'
-alias grep='grep --color=auto'
-alias grepw='grep --color=auto -Hrnwi'
-alias mkdir='mkdir -pv'
-alias mv='mv -v'
-alias wget='wget -c'
-alias tree="tree -aI 'test*|.git|node_modules|resources'"
-alias pp='exa -lFh --git'
 
-##########################################
-# ######## Application Configs ######### #
-##########################################
-
-#########
-## NVM ##
-#########
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-#########
-## ROS ## 
-#########
-#source /opt/ros/galactic/setup.bash
 
 ###############
-## ZSH SOURCE ## 
-################
-source $ZSH/oh-my-zsh.sh
+# ## ALIAS ## #
+###############
+alias ls='ls --color'
+alias ll='exa -laF --git'
+
+
+#################
+# ## PLUGINS ## #
+#################
+
+
+#######################
+# ## SET VARIABLES ## #
+#######################
+
+
+##################################
+# ## LOCATION $PATH VARIABLES ## #
+##################################
+## Config 
+export XDG_CONFIG_HOME=$HOME/.config
+
+## Linuxbrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+## Starship
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+
+#########################
+# ## STARSHIP PROMPT ## #
+#########################
+eval "$(starship init zsh)"
