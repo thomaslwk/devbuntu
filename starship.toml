@@ -1,35 +1,81 @@
-####################
-## Starship Config ##
-####################
-# Inserts a blank line between shell prompts
-add_newline = true
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$nodejs\
+$cmd_duration $jobs $time\
+$line_break\
+$character
+"""
 
-# Replace the "❯" symbol in the prompt with "➜"
-[character] 
-success_symbol = "[λ](bold #e25e32)"
-error_symbol = "[λ](bold red)"
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[fill]
+symbol = " "
 
 [hostname]
 ssh_only = false
 format = "[thomaslwk]($style) in "
-style = "green"
+style = "#d69821"
 disabled = false
 
-# Disable the package module, hiding it from the prompt completely
-[package]
-disabled = true
-
 [directory]
-truncate_to_repo = true
 style = "cyan"
 home_symbol = "~"
+read_only = " "
+truncation_length = 2
+truncate_to_repo = true
+
+[character]
+success_symbol = "[λ](bold #d2859a)"
+error_symbol = "[λ](bold #fa4834)"
+vicmd_symbol = "[λ](bold #b8ba26)"
 
 [git_branch]
-symbol = ""
-truncation_length = 20
-style = "purple"
+symbol = " "
+format = "[$symbol$branch]($style bold) "
+style = "#b06185"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
 
 [git_status]
-format = '([\[$all_status\]]($style) )'
-style = "bold #809fff"
-disabled = true
+format = '([\[$all_status$ahead_behind\]]($style bold) )'
+style = "#458487"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style bold)\) '
+style = "#458487"
+
+[git_metrics]
+disabled = false
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
